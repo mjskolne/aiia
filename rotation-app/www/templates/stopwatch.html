@@ -1,0 +1,18 @@
+<style> #stopwatch {text-align:center;}</style>
+<ion-content padding="true">
+    <h4 id="stopwatch">stopwatch</h4>
+    
+    <h3 id="stopwatch">{{metric}}</h3>
+    
+    <h2 id="stopwatch">{{minutes}}:{{seconds}}:{{cs}}</h2>
+    <h4 id="stopwatch">{{raw}}</h4>
+    
+    <button class="button button-block button-balanced" ng-click="startWatch()">
+        start</button>
+    <button class="button button-block button-assertive" ng-click="stopWatch()">
+        stop</button>
+    <h1> </h1>
+    <h1> </h1>
+    <button class="button button-block button-assertive" ng-click="changeState()">
+        close</button>
+</ion-content>
