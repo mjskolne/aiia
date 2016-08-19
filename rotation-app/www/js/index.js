@@ -28,5 +28,9 @@ indexApp.config(function($stateProvider, $urlRouterProvider) {
 
 
 indexApp.run(['$state', function($state) {
+    alert("fired: indexApp.run()");
+
     $state.transitionTo('main');
+
+
 }]);

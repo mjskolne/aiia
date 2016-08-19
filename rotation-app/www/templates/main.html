@@ -2,6 +2,35 @@
 <ion-content padding="true">
     <h4 id="main">main</h4>
 
+    <div class="description">
+        <i class="icon ion-bluetooth"></i>
+        <br>
+        Scan for BLE peripheral with or without a Service UUID
+    </div>
+    <div class="list">
+        <label class="item item-input">
+            <span class="input-label">UUID</span>
+            <input ng-model="serviceUuid" type="text" spellcheck="false" autocorrect="of" autocomplete="off" placeholder="Blank">
+        </label>
+    </div>
+    <div class="{{scanStatus.phase}}">
+        {{scanStatus.text}}
+    </div>
+    <div id="peripheral-list" class="hidden">
+        <div class="card" ng-repeat="device in blePeripherals" ng-click="connect(device.id, device.name)">
+            <div class="item item-divider">
+                {{device.name}}
+            </div>
+            <div class="item item-text-wrap align-left">
+                RSSI:{{device.rssi}}
+                <br>
+                ID:{{device.id}}
+            </div>
+        </div>
+    </div>
+    <button class="button button-block button-balanced" ng-disabled="{{isScanBtnDisabled}}" ng-click="scan(serviceUuid)">
+        Scan</button>
+
     <button class="button button-block button-balanced" ng-click="changeState()">
             connect</button>
 </ion-content>
